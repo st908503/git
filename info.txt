@@ -1,0 +1,78 @@
+i created anew file index.html
+git init
+added h1 tag with some data
+used git status for checking anything added to commit 
+git add index.html
+then commit by git commit -m 'v1'
+
+added a new p tag in index.html
+git add index.html
+then commit by git commit -m 'v1.1'
+used git log for checking all commits (v1.1 and v1)
+used git reset --hard 610cd9566617393601ae35d77a10974574dbe56a for going to v1
+now if check git log I had only v1 
+so p tag was gone that was from v1.1 and only h tag from v1 version remained
+
+
+soft reset---
+for this now added a new p tag with some content inm index.html
+git add index.html
+then commit by git commit -m 'v1.1' (because v1.1 was removed above when backtracked to previos version ie v1)
+used git log for checking all commits (v1.1 and v1)
+used git reset --soft 610cd9566617393601ae35d77a10974574dbe56a
+this is p tag wasnt removed but if we check git log we will find only v1. So using soft reset, the code wont be removed but version is removed from log.
+
+If we check git status now, we will get modified index.html
+
+now for making any change used git reset 
+now in code modified p tag content
+git add index.html
+then commit by git commit -m 'v1.2'
+
+
+Git branch--
+using branch we can keep our main code safe and make changes in a test file which is copy of main code
+using git branch we get the branch that is only one currently ie. master (master will be astrix and in green color)
+
+created a new branch by git branch test
+now check again by git branch we will get master and test 2 branches
+master will be in astrix and in green color denoting on which branch we are currently on
+
+for switching to a branch we will use git checkout test
+now check again by git branch we will get master and test 2 branches
+but this time test will be in astrix and in green color because we switched to test
+now I added an h2 tag withsome content in index.html (below testing comment)
+git status
+git add index.html
+git commit -m 'test1'
+now if we want to move to previous branch then do git checkout master
+as soon as we do this the code under testing comment will be removed but that doesnt mean your testing code is gone
+now come back again to test branch by git checkout test. As soon as we do this or testing code is brought back again
+
+now for merging my testing code to my main code-
+right now we are on test branch so move to main branch first by git checkout master( because we can merge a branch only by moving to main branch)
+now use git merge test for merging master and test branches
+
+now i created a new branch wd for learning
+created a p tag with some content in inde.html with comment testing wd
+git add index.html
+git commit -m 'wd'
+switched to master branch by git checkout master
+now use git merge wd for merging master and wd branches
+
+
+putting the code on github---
+
+create a new repository then copy three line code from git and peste in vs code and hit enter. your code will be added to github. then open added code in github. There will be an option of history in the right side. There you can see all the previous commits 
+
+we can save git code by coying url of file from github then open terminal and cd to location where you want to clone the github file. Then use git clone <copied url> and hit enter
+
+we can push our code by using git push and rather than using git clone again we can pull the code to same location where we cloned it in our local system by using git pull in the folder where we have the github cloned file. So first time only we use git clone after that we can use git pull
+
+
+
+
+
+
+
+
